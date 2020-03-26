@@ -1,15 +1,4 @@
-<!-- Issue 1: HTML language detection -->
-<ng-container *ngIf="true">
-  <!-- this piece of code is detected as HTML -->
-  Hello world
-</ng-container>
-<!-- `as test` breaks "detection" of template -->
-<ng-container *ngIf="true as test">
-  <!-- This piece of code is detected as TS/JS -->
-  const var = 123;
-</ng-container>
-
-<!-- Issue 2: typechecking of context of custom directive -->
+<!-- typechecking of context of custom directive -->
 <ng-container *myIf="null as test">
   <!-- test is any -->
   {{ test }}
